@@ -42,42 +42,33 @@ export default function Home() {
 
   const projects = [
     {
-      title: "Food Delivery Website",
-      tech: ["React", "Node.js", "MongoDB", "Express"],
-      description: `A comprehensive food delivery platform featuring user authentication, restaurant browsing, 
-        cart management, and order tracking. Built with React for the frontend and Node.js/Express for the backend, 
-        with MongoDB for data storage. Includes responsive design, real-time order updates, and secure payment integration.`,
-      github: "https://github.com/udayz84/Food-Delivery",
+      title: "Full Stack Chat Application",
+      tech: ["Next.js", "TypeScript", "TailwindCSS", "Redis", "Google Auth"],
+      description: `A modern real-time chat application featuring friend requests via email, performant database 
+        queries with Redis, and Google authentication. Built with responsive UI using TailwindCSS, 
+        protected routes, and real-time messaging capabilities with Next.js and TypeScript.`,
+      github: "https://github.com/udayz84/chat-app",
       demo: "" // You can provide this link if you have a live demo
     },
     {
-      title: "E-Commerce Platform",
-      tech: ["MERN Stack", "Redux", "Stripe", "JWT"],
-      description: `A full-featured e-commerce application with user authentication, product catalog, shopping cart, 
-        and payment processing. Implements Redux for state management, JWT for authentication, and Stripe for payments. 
-        Features include product search, filtering, user reviews, and admin dashboard for product management.`,
-      github: "https://github.com/udayz84/E-Commerce",
-      demo: "" // You can provide this link if you have a live demo
+      title: "Advanced Todo List with Weather Integration",
+      tech: ["React", "Redux", "Material-UI", "Weather API", "React DnD"],
+      description: `A modern task management application with drag-and-drop functionality, weather integration 
+        for outdoor tasks, and priority management. Features user authentication, three-column layout 
+        (To Do, In Progress, Completed), and real-time weather information with responsive design.`,
+      github: "https://github.com/udayz84/advanced-to-do-list",
+      demo: "https://advanced-to-do-list-rho.vercel.app"
     },
     {
-      title: "Netflix Clone",
-      tech: ["React", "Firebase", "TMDB API", "CSS3"],
-      description: `A Netflix-inspired streaming platform clone featuring movie browsing, search functionality, 
-        and user authentication. Built with React and integrated with TMDB API for movie data. Includes Firebase 
-        for backend services, responsive design, and smooth animations for an engaging user experience.`,
-      github: "https://github.com/udayz84/netflix-clone",
-      demo: "" // You can provide this link if you have a live demo
+      title: "React E-Commerce Platform",
+      tech: ["React", "JavaScript", "HTML5", "CSS3", "Responsive Design"],
+      description: `A modern e-commerce platform built with React and JavaScript, featuring a complete shopping 
+        experience with product catalog, shopping cart functionality, and responsive design. The application 
+        demonstrates proficiency in React component architecture, state management, and modern web development 
+        practices with clean, maintainable code structure and user-friendly interface design.`,
+      github: "https://github.com/udayz84/react-ecommerce",
+      demo: ""
     },
-    {
-      title: "Spotify Clone",
-      tech: ["HTML", "CSS", "JavaScript", "Web APIs"],
-      description: `A Spotify-inspired music player application with playlist management, audio controls, 
-        and responsive design. Built using vanilla JavaScript with Web Audio APIs for music playback. 
-        Features include custom audio controls, playlist creation, and modern UI design with smooth transitions.`,
-      github: "https://github.com/udayz84/spotify-clone",
-      demo: "" // You can provide this link if you have a live demo
-    },
-
     {
       title: "Newkundi Chatbot",
       tech: ["TypeScript", "Next.js", "AI Integration", "Redis", "TailwindCSS"],
@@ -120,8 +111,8 @@ export default function Home() {
       
       {/* Optimized Stars Background */}
       <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none" style={{ zIndex: -10 }}>
-        {/* Reduced to 30 static stars for better mobile performance */}
-        {[...Array(30)].map((_, i) => (
+        {/* Reduced to 50 static stars for better performance */}
+        {[...Array(50)].map((_, i) => (
           <motion.div
             key={`global-star-${i}`}
             className="absolute rounded-full bg-white"
@@ -144,8 +135,8 @@ export default function Home() {
           />
         ))}
         
-        {/* Reduced moving stars for mobile */}
-        {[...Array(10)].map((_, i) => (
+        {/* Reduced moving stars */}
+        {[...Array(15)].map((_, i) => (
           <motion.div
             key={`moving-star-${i}`}
             className="absolute rounded-full"
@@ -177,9 +168,9 @@ export default function Home() {
           {/* Background gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 pointer-events-none" />
           
-          {/* Reduced hero-specific animated stars for mobile */}
+          {/* Reduced hero-specific animated stars */}
           <div className="absolute inset-0 pointer-events-none" style={{ zIndex: -5 }}>
-            {[...Array(5)].map((_, i) => (
+            {[...Array(10)].map((_, i) => (
               <motion.div
                 key={`hero-star-${i}`}
                 className="absolute rounded-full"
@@ -205,9 +196,9 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Simplified moving particles for mobile */}
+          {/* Simplified moving particles */}
           <div className="absolute inset-0 pointer-events-none" style={{ zIndex: -5 }}>
-            {[...Array(3)].map((_, i) => (
+            {[...Array(5)].map((_, i) => (
               <motion.div
                 key={`particle-${i}`}
                 className="absolute w-1 h-1 bg-blue-400 rounded-full"
@@ -233,18 +224,18 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10 lg:gap-12 relative z-10">
+          <div className="container mx-auto px-4 sm:px-8 pt-16 sm:pt-32 pb-8 sm:pb-20 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-12 relative z-10">
             <motion.div 
-              className="flex-1 space-y-6 sm:space-y-8 relative z-20 text-center lg:text-left"
+              className="flex-1 space-y-4 sm:space-y-8 relative z-20 text-center md:text-left w-full md:w-auto"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              {/* Animated multilingual greetings - responsive */}
-              <div className="h-16 sm:h-20 flex items-center justify-center lg:justify-start">
+              {/* Animated multilingual greetings */}
+              <div className="h-12 sm:h-20 flex items-center justify-center md:justify-start">
                 <motion.h1 
                   key={currentGreeting}
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold"
+                  className="text-3xl sm:text-5xl md:text-7xl font-bold"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
@@ -257,23 +248,21 @@ export default function Home() {
                 </motion.h1>
               </div>
               
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold">
                 <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
                   I'm Uday
                 </span>
               </h2>
               
-              <h3 className="text-xl sm:text-2xl md:text-3xl text-gray-400">
+              <h3 className="text-lg sm:text-2xl md:text-3xl text-gray-400">
                 Full Stack Developer
               </h3>
-              <p className="text-base sm:text-lg text-gray-300 max-w-xl mx-auto lg:mx-0">
+              <p className="text-sm sm:text-lg text-gray-300 max-w-xl mx-auto md:mx-0 px-2 sm:px-0">
                 Passionate about creating efficient, user-friendly web applications
-                with modern technologies. Specializing in Next.js, React, and Node.js and more.
+                with modern technologies. Specializing in Next.js, React, and Node.js.
                 Strong foundation in Data Structures & Algorithms with 150+ problems solved.
               </p>
-              
-              {/* Mobile-optimized buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 relative z-50 items-center lg:items-start">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start relative z-50 px-2 sm:px-0">
                 <button
                   onClick={() => {
                     console.log('View My Work clicked');
@@ -282,7 +271,7 @@ export default function Home() {
                       projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                   }}
-                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 hover:bg-blue-700 rounded-full text-white font-semibold cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl relative z-50 text-center touch-manipulation"
+                  className="w-full sm:w-auto px-4 sm:px-8 py-2.5 sm:py-4 bg-blue-600 hover:bg-blue-700 rounded-full text-white text-sm sm:text-base font-semibold cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl relative z-50"
                   style={{ pointerEvents: 'auto', zIndex: 9999 }}
                 >
                   View My Work
@@ -291,7 +280,7 @@ export default function Home() {
                 <a
                   href="/23335A1213 (1).pdf"
                   download="Uday_Znanam_Resume.pdf"
-                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gray-700 hover:bg-gray-600 border-2 border-gray-600 rounded-full text-white font-semibold transition-all duration-200 shadow-lg hover:shadow-xl relative z-50 text-center inline-block touch-manipulation"
+                  className="w-full sm:w-auto px-4 sm:px-8 py-2.5 sm:py-4 bg-gray-700 hover:bg-gray-600 border-2 border-gray-600 rounded-full text-white text-sm sm:text-base font-semibold transition-all duration-200 shadow-lg hover:shadow-xl relative z-50 text-center inline-block"
                   style={{ pointerEvents: 'auto', zIndex: 9999 }}
                 >
                   Download Resume
@@ -300,48 +289,56 @@ export default function Home() {
             </motion.div>
 
             <motion.div
-              className="flex-1 flex justify-center order-first lg:order-last"
+              className="flex-1 flex justify-center mt-6 sm:mt-0 w-full sm:w-auto"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <Avatar />
+              <div className="w-[70%] sm:w-full max-w-md">
+                <Avatar />
+              </div>
             </motion.div>
           </div>
         </section>
 
+        {/* About Me Section */}
+        <section className="px-4 sm:px-8 md:px-24 py-12 sm:py-20 bg-black/30 backdrop-blur-sm relative">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto md:mx-0 md:ml-24"
+          >
+            <h2 className="text-xl sm:text-3xl font-bold mb-4 sm:mb-8 text-center md:text-left">About Me</h2>
+            <p className="text-sm sm:text-lg text-gray-300 leading-relaxed text-center md:text-left px-2 sm:px-0">
+              I'm a passionate Full Stack Developer currently pursuing B.Tech in Information Technology. With strong foundations in both frontend and backend technologies, I enjoy building complete web solutions that solve real-world problems. My journey in programming has led me to master various technologies and solve 150+ coding problems, strengthening my algorithmic thinking.
+            </p>
+          </motion.div>
+        </section>
+
         {/* About/Experience Section */}
-        <section id="about" className="px-4 sm:px-6 lg:px-8 xl:px-24 py-12 sm:py-16 lg:py-20 bg-black/5 backdrop-blur-sm relative">
-          <div className="max-w-6xl mx-auto">
-            <motion.h2 
-              className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center"
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              About Me
-            </motion.h2>
-            <motion.p 
-              className="text-base sm:text-lg text-gray-300 max-w-4xl mx-auto text-center leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              I'm a passionate Full Stack Developer currently pursuing B.Tech in Information Technology. 
-              With strong foundations in both frontend and backend technologies, I enjoy building complete 
-              web solutions that solve real-world problems. My journey in programming has led me to master 
-              various technologies and solve 150+ coding problems, strengthening my algorithmic thinking.
-            </motion.p>
+        <section id="about" className="px-4 sm:px-8 md:px-24 py-12 sm:py-20 bg-black/20 backdrop-blur-sm relative">
+          <div className="max-w-4xl mx-auto md:mx-0 md:ml-24">
+            <h2 className="text-xl sm:text-3xl font-bold mb-6 sm:mb-12 text-center md:text-left">Experience</h2>
+            <div className="w-full px-2 sm:px-0">
+              <h3 className="text-base sm:text-xl font-semibold mb-3 sm:mb-4 text-center md:text-left">Full-Stack Developer Intern</h3>
+              <p className="text-xs sm:text-base text-gray-400 mb-2 text-center md:text-left">Robustrix IT Solutions | April 2025 - Present | Delhi (remote), India</p>
+              <ul className="list-disc list-inside space-y-2 sm:space-y-4 text-gray-300 text-sm sm:text-base md:pl-4">
+                <li className="text-center md:text-left md:list-outside"><span className="inline-block">Architected and developed a full-stack, SEO-optimized matrimonial web application using Next.js and TypeScript, achieving a 35% improvement in page load speed.</span></li>
+                <li className="text-center md:text-left md:list-outside"><span className="inline-block">Engineered efficient backend infrastructure with Prisma ORM and MongoDB, handling over 10,000 user profiles with 99.9% uptime.</span></li>
+                <li className="text-center md:text-left md:list-outside"><span className="inline-block">Implemented user authentication and secure session handling, reducing account abuse by 40%.</span></li>
+                <li className="text-center md:text-left md:list-outside"><span className="inline-block">Designed dynamic matchmaking algorithms, increasing accurate match recommendations by 45%.</span></li>
+              </ul>
+            </div>
           </div>
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="px-4 sm:px-6 lg:px-8 xl:px-24 py-12 sm:py-16 lg:py-20 bg-black/10 backdrop-blur-sm relative">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">Skills</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+        <section id="skills" className="px-4 sm:px-8 md:px-24 py-12 sm:py-20 bg-black/10 backdrop-blur-sm relative">
+          <div className="max-w-4xl mx-auto md:mx-0 md:ml-24">
+            <h2 className="text-xl sm:text-3xl font-bold mb-6 sm:mb-12 text-center md:text-left">Skills</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12 px-2 sm:px-0">
               {Object.entries(skills).map(([category, items], idx) => (
                 <motion.div 
                   key={category}
@@ -349,11 +346,12 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.1, duration: 0.5, ease: "easeOut" }}
                   viewport={{ once: true }}
+                  className="text-center md:text-left"
                 >
-                  <h3 className="text-lg sm:text-xl font-semibold mb-4 capitalize">{category}</h3>
-                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                  <h3 className="text-base sm:text-xl font-semibold mb-3 sm:mb-4 capitalize">{category}</h3>
+                  <div className="flex flex-wrap gap-2 sm:gap-3 justify-center md:justify-start">
                     {items.map((skill, index) => (
-                      <span key={index} className="bg-zinc-800 px-3 sm:px-4 py-2 rounded-full text-sm touch-manipulation">
+                      <span key={index} className="bg-zinc-800 px-2.5 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm">
                         {skill}
                       </span>
                     ))}
@@ -365,24 +363,24 @@ export default function Home() {
         </section>
 
         {/* Education Section */}
-        <section id="education" className="px-4 sm:px-6 lg:px-8 xl:px-24 py-12 sm:py-16 lg:py-20 bg-black/20 backdrop-blur-sm relative">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">Education</h2>
-            <div className="space-y-6 sm:space-y-8">
+        <section id="education" className="px-4 sm:px-8 md:px-24 py-12 sm:py-20 bg-black/20 backdrop-blur-sm relative">
+          <div className="max-w-4xl mx-auto md:mx-0 md:ml-24">
+            <h2 className="text-xl sm:text-3xl font-bold mb-6 sm:mb-12 text-center md:text-left">Education</h2>
+            <div className="space-y-4 sm:space-y-8 px-2 sm:px-0">
               {education.map((edu, index) => (
                 <motion.div 
                   key={index}
-                  className="border-l-2 border-gray-700 pl-4 sm:pl-6 relative"
+                  className="border-l-2 border-gray-700 pl-3 sm:pl-6 relative text-center md:text-left"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.4, ease: "easeOut" }}
                   viewport={{ once: true }}
                 >
-                  <div className="absolute w-3 h-3 bg-gray-700 rounded-full -left-[7px] top-2" />
-                  <h3 className="text-lg sm:text-xl font-semibold">{edu.school}</h3>
-                  <p className="text-gray-400 text-sm sm:text-base">{edu.degree}</p>
-                  <p className="text-gray-500 text-sm">{edu.period} | {edu.location}</p>
-                  <p className="text-gray-400 text-sm sm:text-base">{edu.grade}</p>
+                  <div className="absolute w-2 sm:w-3 h-2 sm:h-3 bg-gray-700 rounded-full -left-[4px] sm:-left-[7px] top-2" />
+                  <h3 className="text-base sm:text-xl font-semibold">{edu.school}</h3>
+                  <p className="text-xs sm:text-base text-gray-400">{edu.degree}</p>
+                  <p className="text-xs sm:text-base text-gray-500">{edu.period} | {edu.location}</p>
+                  <p className="text-xs sm:text-base text-gray-400">{edu.grade}</p>
                 </motion.div>
               ))}
             </div>
@@ -390,46 +388,46 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="px-4 sm:px-6 lg:px-8 xl:px-24 py-12 sm:py-16 lg:py-20 bg-black/10 backdrop-blur-sm relative scroll-mt-20">
-          <div className="max-w-7xl mx-auto">
-            <motion.h2 
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-12 sm:mb-16 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              Featured Projects
-            </motion.h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {projects.map((project, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeInAnimationVariants}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
-                  custom={index}
-                  className="bg-zinc-900 rounded-xl p-6 sm:p-8 border border-zinc-800 hover:border-zinc-700 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 flex flex-col h-full touch-manipulation"
+        <section id="projects" className="px-4 sm:px-8 md:px-24 py-12 sm:py-20 bg-black/10 backdrop-blur-sm relative scroll-mt-20">
+          <motion.h2 
+            className="text-xl sm:text-4xl font-bold mb-8 sm:mb-16 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            Featured Projects
+          </motion.h2>
+          
+          <div className="max-w-7xl mx-auto px-2 sm:px-0">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-8">
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInAnimationVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                custom={index}
+                  className="bg-zinc-900 rounded-xl p-8 border border-zinc-800 hover:border-zinc-700 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 flex flex-col h-full"
                 >
                   {/* Project Header */}
                   <div className="mb-6">
-                    <h3 className="text-xl sm:text-2xl font-bold mb-4 text-white leading-tight">
+                    <h3 className="text-2xl font-bold mb-4 text-white leading-tight">
                       {project.title}
                     </h3>
                     
                     {/* Tech Stack */}
                     <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tech.map((tech, techIndex) => (
+                  {project.tech.map((tech, techIndex) => (
                         <span 
                           key={techIndex} 
-                          className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs font-medium text-blue-300 hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-200"
+                          className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 px-3 py-1.5 rounded-full text-xs font-medium text-blue-300 hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-200"
                         >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
                   </div>
                   
                   {/* Project Description */}
@@ -440,13 +438,13 @@ export default function Home() {
                   </div>
                   
                   {/* Project Links */}
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-auto">
+                  <div className="flex gap-4 mt-auto">
                     {project.github && (
                       <motion.a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm font-semibold transition-all duration-200 border border-zinc-700 hover:border-zinc-600 flex-1 touch-manipulation"
+                        className="flex items-center justify-center gap-2 px-6 py-3 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm font-semibold transition-all duration-200 border border-zinc-700 hover:border-zinc-600 flex-1"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
@@ -459,7 +457,7 @@ export default function Home() {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm font-semibold transition-all duration-200 flex-1 touch-manipulation"
+                        className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm font-semibold transition-all duration-200 flex-1"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
@@ -475,35 +473,68 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="px-4 sm:px-6 lg:px-8 xl:px-24 py-12 sm:py-16 lg:py-20 bg-black/20 backdrop-blur-sm relative">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h2 
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              Let's Connect
-            </motion.h2>
+        <section id="contact" className="px-8 md:px-24 py-20 bg-black/20 backdrop-blur-sm relative">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Get In Touch
+            </h2>
+            <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+              I'm always interested in hearing about new opportunities and projects.
+            </p>
             
-            <motion.p 
-              className="text-base sm:text-lg text-gray-300 mb-8 sm:mb-12 max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              I'm always open to discussing new opportunities, collaborating on interesting projects, 
-              or just having a chat about technology. Feel free to reach out!
-            </motion.p>
-
-            <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+            {/* Contact Details */}
+            <div className="bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-8 border border-zinc-700 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <motion.a
+                  href="mailto:udayznanam@gmail.com"
+                  className="flex flex-col items-center gap-4 p-6 bg-zinc-800/50 rounded-xl hover:bg-zinc-700/50 transition-all duration-200 group"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center group-hover:bg-blue-500 transition-colors">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-1">Email</h3>
+                    <p className="text-gray-400 group-hover:text-gray-300 transition-colors">udayznanam@gmail.com</p>
+                  </div>
+                </motion.a>
+                
+                <motion.a
+                  href="tel:+917997660838"
+                  className="flex flex-col items-center gap-4 p-6 bg-zinc-800/50 rounded-xl hover:bg-zinc-700/50 transition-all duration-200 group"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center group-hover:bg-green-500 transition-colors">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-1">Phone</h3>
+                    <p className="text-gray-400 group-hover:text-gray-300 transition-colors">+91 7997660838</p>
+                  </div>
+                </motion.a>
+              </div>
+            </div>
+            
+            {/* Social Links */}
+            <div className="flex justify-center gap-6">
               <motion.a
                 href="https://github.com/udayz84"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 px-6 py-3 bg-zinc-800 hover:bg-zinc-700 rounded-lg transition-all duration-200 border border-zinc-700 hover:border-zinc-600 touch-manipulation"
+                className="flex items-center gap-3 px-6 py-3 bg-zinc-800 hover:bg-zinc-700 rounded-lg transition-all duration-200 border border-zinc-700 hover:border-zinc-600"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -515,7 +546,7 @@ export default function Home() {
                 href="https://linkedin.com/in/uday-znanam"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-200 touch-manipulation"
+                className="flex items-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-200"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -527,7 +558,7 @@ export default function Home() {
                 href="https://leetcode.com/udayz84"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 px-6 py-3 bg-orange-600 hover:bg-orange-700 rounded-lg transition-all duration-200 touch-manipulation"
+                className="flex items-center gap-3 px-6 py-3 bg-orange-600 hover:bg-orange-700 rounded-lg transition-all duration-200"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -535,7 +566,7 @@ export default function Home() {
                 <span className="font-medium">LeetCode</span>
               </motion.a>
             </div>
-          </div>
+          </motion.div>
         </section>
       </main>
     </>

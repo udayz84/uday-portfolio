@@ -7,7 +7,7 @@ import portfolioAnimation from "../../public/porfolio.json";
 const Avatar = () => {
   return (
     <motion.div
-      className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] mx-auto"
+      className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px]"
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
@@ -24,16 +24,16 @@ const Avatar = () => {
         }}
       />
       
-      {/* Simplified decorative circles with reduced motion - responsive sizing */}
+      {/* Simplified decorative circles with reduced motion */}
       <motion.div 
-        className="absolute w-3 h-3 sm:w-4 sm:h-4 bg-yellow-400 rounded-full"
+        className="absolute w-4 h-4 bg-yellow-400 rounded-full"
         style={{ 
           top: "20%", 
           left: "10%",
           willChange: 'transform'
         }}
         animate={{
-          y: [0, -6, 0] // Reduced motion for mobile
+          y: [0, -8, 0]
         }}
         transition={{
           duration: 4,
@@ -43,14 +43,14 @@ const Avatar = () => {
       />
 
       <motion.div 
-        className="absolute w-2 h-2 sm:w-3 sm:h-3 bg-pink-400 rounded-full"
+        className="absolute w-3 h-3 bg-pink-400 rounded-full"
         style={{ 
           top: "70%", 
           right: "15%",
           willChange: 'transform'
         }}
         animate={{
-          x: [0, 6, 0] // Reduced motion for mobile
+          x: [0, 8, 0]
         }}
         transition={{
           duration: 5,
@@ -59,9 +59,9 @@ const Avatar = () => {
         }}
       />
       
-      {/* Simplified code symbols with responsive sizing */}
+      {/* Simplified code symbols with less rotation */}
       <motion.div 
-        className="absolute text-lg sm:text-xl md:text-2xl font-bold text-blue-400 select-none"
+        className="absolute text-2xl font-bold text-blue-400"
         style={{ 
           top: "15%", 
           right: "20%",
@@ -80,7 +80,7 @@ const Avatar = () => {
       </motion.div>
 
       <motion.div 
-        className="absolute text-base sm:text-lg md:text-xl font-bold text-purple-400 select-none"
+        className="absolute text-xl font-bold text-purple-400"
         style={{ 
           bottom: "20%", 
           left: "15%",
@@ -98,15 +98,15 @@ const Avatar = () => {
         {"{}"}
       </motion.div>
 
-      {/* Lottie Animation - Optimized for mobile */}
-      <div className="absolute inset-3 sm:inset-4 flex items-center justify-center">
+      {/* Lottie Animation - Optimized */}
+      <div className="absolute inset-4 flex items-center justify-center">
         <Lottie 
           animationData={portfolioAnimation}
           loop={true}
           autoplay={true}
           style={{ 
-            width: '85%', 
-            height: '85%'
+            width: '80%', 
+            height: '80%'
           }}
           rendererSettings={{
             preserveAspectRatio: 'xMidYMid slice',
@@ -117,7 +117,7 @@ const Avatar = () => {
 
       {/* Simplified rotating ring */}
       <motion.div
-        className="absolute inset-1 sm:inset-2 rounded-full border border-dashed sm:border-2 border-gray-600/30"
+        className="absolute inset-2 rounded-full border-2 border-dashed border-gray-600/30"
         style={{ willChange: 'transform' }}
         animate={{ rotate: -360 }}
         transition={{
