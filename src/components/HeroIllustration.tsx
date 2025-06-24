@@ -6,9 +6,9 @@ const HeroIllustration = () => {
   return (
     <motion.div
       className="relative w-full max-w-[600px]"
-      initial={{ opacity: 0, scale: 0.5 }}
+      initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <svg
         className="w-full h-auto"
@@ -16,11 +16,8 @@ const HeroIllustration = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Modern Developer Illustration */}
-        <motion.path
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
+        {/* Simplified Developer Illustration - removed heavy path animations */}
+        <path
           d="M292.345 555.341c0 39.32-23.336 52.322-52.121 52.322s-52.121-13.002-52.121-52.322c0-39.321 52.121-89.453 52.121-89.453s52.121 50.132 52.121 89.453z"
           fill="#6C63FF"
         />
@@ -36,16 +33,15 @@ const HeroIllustration = () => {
           d="M277.32 535.542l16.177-22.609-16.196 25.019-.043 2.576c-1.118-.025-2.228-.084-3.318-.178 0 0 .035-2.192.109-4.593.075-1.759.358-3.496.833-5.169"
           fill="#3F3D56"
         />
-        {/* Add more SVG paths for the complete illustration */}
         
-        {/* Animated Elements */}
+        {/* Simplified Animated Elements */}
         <motion.g
+          style={{ willChange: 'transform' }}
           animate={{
-            y: [0, -10, 0],
-            rotate: [0, 5, 0]
+            y: [0, -8, 0],
           }}
           transition={{
-            duration: 5,
+            duration: 6,
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -57,14 +53,15 @@ const HeroIllustration = () => {
           <rect x="420" y="360" width="120" height="10" rx="5" fill="#4A5568" />
         </motion.g>
 
-        {/* Animated Code Symbols */}
+        {/* Simplified Code Symbols */}
         <motion.g
+          style={{ willChange: 'opacity, transform' }}
           animate={{
-            opacity: [0, 1, 0],
-            y: [-20, 0, -20]
+            opacity: [0.4, 0.8, 0.4],
+            y: [-5, 5, -5]
           }}
           transition={{
-            duration: 3,
+            duration: 4,
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -74,14 +71,14 @@ const HeroIllustration = () => {
           <text x="700" y="360" fill="#A0AEC0" fontSize="24">[]</text>
         </motion.g>
 
-        {/* Tech Stack Icons */}
+        {/* Simplified Tech Stack Icons */}
         <motion.g
+          style={{ willChange: 'transform' }}
           animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 10, 0]
+            scale: [1, 1.05, 1],
           }}
           transition={{
-            duration: 4,
+            duration: 5,
             repeat: Infinity,
             ease: "easeInOut"
           }}

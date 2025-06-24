@@ -15,56 +15,12 @@ body {
   background: rgb(var(--background));
   font-feature-settings: "ss01", "ss02", "cv01", "cv02";
   position: relative;
+  /* Performance optimizations */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(2px 2px at 20px 30px, #fff, transparent),
-    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
-    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
-    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
-    radial-gradient(2px 2px at 160px 30px, #fff, transparent);
-  background-repeat: repeat;
-  background-size: 200px 100px;
-  animation: sparkle 10s linear infinite;
-  pointer-events: none;
-  z-index: -1;
-}
-
-@keyframes sparkle {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(1px 1px at 50px 50px, #60a5fa, transparent),
-    radial-gradient(1px 1px at 100px 100px, #a855f7, transparent),
-    radial-gradient(1px 1px at 150px 25px, #60a5fa, transparent),
-    radial-gradient(1px 1px at 200px 75px, #a855f7, transparent);
-  background-repeat: repeat;
-  background-size: 250px 150px;
-  animation: twinkle 8s ease-in-out infinite alternate;
-  pointer-events: none;
-  z-index: -1;
-}
-
-@keyframes twinkle {
-  0% { opacity: 0.3; }
-  100% { opacity: 0.8; }
-}
+/* Removed heavy background animations for better performance */
 
 /* Selection styles */
 ::selection {
@@ -75,6 +31,37 @@ body::after {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Performance optimizations for animations */
+* {
+  box-sizing: border-box;
+}
+
+/* Optimize Framer Motion animations */
+[data-framer-motion] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize star animations */
+[class*="star"] {
+  will-change: opacity, transform;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Optimize Lottie animations */
+[data-testid="lottie"],
+.lottie-container {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Optimize rotating elements */
+.rotating-element {
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 /* Custom animations */
@@ -91,7 +78,20 @@ html {
 
 .animate-fade-in {
   animation: fadeIn 0.5s ease-out forwards;
-  }
+}
+
+/* Optimized gradient text */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Optimize backdrop blur */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
 
 /* Custom utilities */
 @layer utilities {
@@ -99,5 +99,11 @@ html {
     background: linear-gradient(to right, #fff, #888);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
 }

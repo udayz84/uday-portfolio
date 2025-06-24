@@ -6,9 +6,9 @@ const DeveloperIllustration = () => {
   return (
     <motion.div
       className="relative w-full max-w-[600px]"
-      initial={{ opacity: 0, scale: 0.5 }}
+      initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -17,9 +17,9 @@ const DeveloperIllustration = () => {
         viewBox="0 0 850 850"
       >
         <motion.g
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Main Character */}
           <path
@@ -32,27 +32,27 @@ const DeveloperIllustration = () => {
             fill="#fff"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
           />
           {/* Code Lines */}
           <motion.g
             fill="#e6e6e6"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1, stagger: 0.1 }}
+            transition={{ delay: 0.6, duration: 0.5, ease: "easeOut" }}
           >
             <rect x="264.08" y="182.02" width="110" height="10" rx="5" />
             <rect x="264.08" y="212.02" width="160" height="10" rx="5" />
             <rect x="264.08" y="242.02" width="130" height="10" rx="5" />
           </motion.g>
-          {/* Floating Elements */}
+          {/* Simplified Floating Elements */}
           <motion.g
+            style={{ willChange: 'transform' }}
             animate={{
-              y: [-10, 10, -10],
-              rotate: [-5, 5, -5]
+              y: [-5, 5, -5],
             }}
             transition={{
-              duration: 5,
+              duration: 6,
               repeat: Infinity,
               ease: "easeInOut"
             }}
@@ -61,16 +61,16 @@ const DeveloperIllustration = () => {
             <circle cx="650" cy="250" r="20" fill="#6c63ff" opacity="0.4" />
             <circle cx="680" cy="180" r="15" fill="#6c63ff" opacity="0.6" />
           </motion.g>
-          {/* Tech Icons */}
+          {/* Simplified Tech Icons */}
           <motion.g
+            style={{ willChange: 'transform' }}
             animate={{
-              scale: [1, 1.1, 1],
-              rotate: [0, 360, 0]
+              scale: [1, 1.05, 1],
             }}
             transition={{
-              duration: 20,
+              duration: 8,
               repeat: Infinity,
-              ease: "linear"
+              ease: "easeInOut"
             }}
           >
             <path

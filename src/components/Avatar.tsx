@@ -10,57 +10,70 @@ const Avatar = () => {
       className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px]"
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      {/* Rotating background circle */}
+      {/* Optimized rotating background circle */}
       <motion.div 
         className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30"
+        style={{ willChange: 'transform' }}
         animate={{ rotate: 360 }}
         transition={{
-          duration: 20,
+          duration: 30,
           repeat: Infinity,
           ease: "linear"
         }}
       />
       
-      {/* Rotating decorative circles */}
+      {/* Simplified decorative circles with reduced motion */}
       <motion.div 
         className="absolute w-4 h-4 bg-yellow-400 rounded-full"
-        style={{ top: "20%", left: "10%" }}
+        style={{ 
+          top: "20%", 
+          left: "10%",
+          willChange: 'transform'
+        }}
         animate={{
-          rotate: 360,
-          y: [0, -10, 0]
+          y: [0, -8, 0]
         }}
         transition={{
-          rotate: { duration: 15, repeat: Infinity, ease: "linear" },
-          y: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut"
         }}
       />
 
       <motion.div 
         className="absolute w-3 h-3 bg-pink-400 rounded-full"
-        style={{ top: "70%", right: "15%" }}
+        style={{ 
+          top: "70%", 
+          right: "15%",
+          willChange: 'transform'
+        }}
         animate={{
-          rotate: -360,
-          x: [0, 10, 0]
+          x: [0, 8, 0]
         }}
         transition={{
-          rotate: { duration: 12, repeat: Infinity, ease: "linear" },
-          x: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut"
         }}
       />
       
-      {/* Rotating code symbols */}
+      {/* Simplified code symbols with less rotation */}
       <motion.div 
         className="absolute text-2xl font-bold text-blue-400"
-        style={{ top: "15%", right: "20%" }}
+        style={{ 
+          top: "15%", 
+          right: "20%",
+          willChange: 'transform'
+        }}
         animate={{
-          rotate: 360,
-          scale: [1, 1.1, 1]
+          scale: [1, 1.05, 1]
         }}
         transition={{
-          rotate: { duration: 18, repeat: Infinity, ease: "linear" },
-          scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut"
         }}
       >
         {"</>"}
@@ -68,20 +81,24 @@ const Avatar = () => {
 
       <motion.div 
         className="absolute text-xl font-bold text-purple-400"
-        style={{ bottom: "20%", left: "15%" }}
+        style={{ 
+          bottom: "20%", 
+          left: "15%",
+          willChange: 'transform'
+        }}
         animate={{
-          rotate: -360,
-          scale: [1, 0.9, 1]
+          scale: [1, 0.95, 1]
         }}
         transition={{
-          rotate: { duration: 16, repeat: Infinity, ease: "linear" },
-          scale: { duration: 2.5, repeat: Infinity, ease: "easeInOut" }
+          duration: 3.5,
+          repeat: Infinity,
+          ease: "easeInOut"
         }}
       >
         {"{}"}
       </motion.div>
 
-      {/* Lottie Animation - Flipped horizontally and centered */}
+      {/* Lottie Animation - Optimized */}
       <div className="absolute inset-4 flex items-center justify-center">
         <Lottie 
           animationData={portfolioAnimation}
@@ -92,15 +109,20 @@ const Avatar = () => {
             height: '80%',
             transform: 'scaleX(-1)' // Flip horizontally
           }}
+          rendererSettings={{
+            preserveAspectRatio: 'xMidYMid slice',
+            progressiveLoad: true
+          }}
         />
       </div>
 
-      {/* Additional rotating ring */}
+      {/* Simplified rotating ring */}
       <motion.div
         className="absolute inset-2 rounded-full border-2 border-dashed border-gray-600/30"
+        style={{ willChange: 'transform' }}
         animate={{ rotate: -360 }}
         transition={{
-          duration: 25,
+          duration: 40,
           repeat: Infinity,
           ease: "linear"
         }}
